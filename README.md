@@ -5,14 +5,14 @@
 `git clone https://github.com/zyeup/word_quiz_app.git`  
 
 ・word_quiz_appディレクトリ内に移動する。  
-cd word_quiz_app
+`cd word_quiz_app`
   
-・下記コマンドをターミナル上で入力して実行。  
-ruby sample.rb  
-
+・下記コマンドを入力して実行。  
+`ruby sample.rb`  
+  
 ## うまく実装できなかったところ  
 ・仕様や拡張仕様に関しては実装まで完了できた。  
-
+  
 ## 調べたこと  
 ・ひらがなをバリデーションする時の正規表現の書き方。  
 ・テスト実行時に、テスト対象ファイルが実行されない書き方。(if __FILE__ == $0)  
