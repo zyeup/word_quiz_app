@@ -2,14 +2,16 @@
 
 ## 実行方法
 ・ターミナル上で下記コマンドを入力して、クローンする。  
-git clone https://github.com/zyeup/word_quiz_app.git  
+`git clone https://github.com/zyeup/word_quiz_app.git`  
+
+・word_quiz_appディレクトリ内に移動する。  
+cd word_quiz_app
   
-・下記コマンドをターミナル上で入力して実行  
+・下記コマンドをターミナル上で入力して実行。  
 ruby sample.rb  
 
 ## うまく実装できなかったところ  
 ・仕様や拡張仕様に関しては実装まで完了できた。  
-・一方で、より簡潔かつ読みやすいコードで実装できる部分もあったと思う。  
 
 ## 調べたこと  
 ・ひらがなをバリデーションする時の正規表現の書き方。  
