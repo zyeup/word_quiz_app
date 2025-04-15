@@ -8,7 +8,6 @@ EASY_HIRAGANA_WORDS = ["ごはん", "りんご", "たまご", "たいよう", "�
 NORMAL_HIRAGANA_WORDS = ["ほどうきょう", "りょうきん", "りょくちゃ", "おうだんほどう", "しんごうき", "すいはんき", "せんたくき", "れいぞうこ", "ぎじゅつしょ", "しおこしょう"]
 HARD_HIRAGANA_WORDS = ["けんちょうしょざいち", "こんびにえんすすとあ", "すーぱーまーけっと", "もばいるばってりー", "こうとうきょういく", "かいせきりょうり", "かんきょうおせん", "きしょうえいせい", "ぜんこくたいかい", "うんどうしんけい"]
 
-
 def str_valid(input, hiragana_flg)
   if hiragana_flg && input.match?(/[ぁ-ん]/) && input.size == 1
     true
@@ -32,19 +31,19 @@ end
 
 def version_select(version)
   if version == "y"
+    puts ""
     puts "アルファベット版が選択されました"
     puts ""
     false
   else
+    puts ""
     puts "日本語ひらがな版が選択されました"
     puts ""
     true
   end
 end
 
-
 def mode_select(mode, mode_flg, hiragana_flg)
-
   case mode
   when "easy"
     words = hiragana_flg ? EASY_HIRAGANA_WORDS : EASY_WORDS
@@ -60,9 +59,9 @@ def mode_select(mode, mode_flg, hiragana_flg)
     mode_flg = true
   else
     puts "もう一度入力してください。"
+    puts ""
     mode_flg = false
   end
-
   return mode_flg, words, try_count
 end
 
@@ -72,8 +71,9 @@ def run_game(try_count, ans_array, hiragana_flg)
   input_array = []
   run_flg = true
 
-  puts result_array.join
-  puts try_count
+  puts ""
+  puts "問題：#{result_array.join}"
+  puts "残り失敗可能回数：#{try_count}"
   puts input_array.join(" ")
   puts ""
 
@@ -96,8 +96,9 @@ def run_game(try_count, ans_array, hiragana_flg)
       result_array[num] = ans_array[num]
     end
 
+    puts ""
     puts "結果：#{result_array.join}"
-    puts "残り失敗回数：#{try_count}"
+    puts "残り失敗可能回数：#{try_count}"
     puts "これまで入力した単語：#{input_array.join(" ")}"
     puts ""
 
@@ -123,7 +124,6 @@ if __FILE__ == $0
   prev_ans = ""
 
   while loop_flg
-    #フラグの初期化
     hiragana_flg = false
     mode_flg = false
 
@@ -157,7 +157,7 @@ if __FILE__ == $0
       prev_ans = ans
     else
       loop_flg = false
+      puts "ゲームを終了します。"
     end
-
   end
 end
